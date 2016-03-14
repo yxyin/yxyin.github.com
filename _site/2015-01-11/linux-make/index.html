@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>make</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="make, Linux, make,Linux,script, RainyAlley" />
+    <meta name="description" content="make, Linux, make,Linux,script, " />
+    <meta name="theme-color" content="#2CA6CB"/>
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://101.201.198.151:4000/favicon.ico" />
+    <link rel="canonical" href="http://101.201.198.151:4000/2015-01-11/linux-make/" />
+    <link rel="alternate" type="application/rss+xml" title="RainyAlley" href="http://101.201.198.151:4000/feed.xml"  />
+
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/octicons/octicons.css" />
+    <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/style.css" />
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://101.201.198.151:4000/static/js/script.js"></script>
+</head>
+
+
+<body>
+<div class="main">
+
+    
+    
+    <header>
+        <nav class="navbar navbar-tiffany rectangle" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://101.201.198.151:4000/">RainyAlley</a>
+                    <p class="navbar-text">Developer</p>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li>
+                        <a href="http://101.201.198.151:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="http://101.201.198.151:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://101.201.198.151:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="http://101.201.198.151:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="#stq=" class="search-button"><span class="octicon octicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/highlight.css" />
+<link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/post.css" />
+<script type="text/javascript" src="http://101.201.198.151:4000/static/js/post.js"></script>
+<script type="text/javascript" src="http://101.201.198.151:4000/static/js/toc.js"></script>
+<div class="row">
+    <div class="content col-lg-9">
+        <div class="sheet post">
+          <header>
+            <h2>make</h2>
+            <p class="post-meta">
+                <span class="octicon octicon-clock"></span> Jan 11, 2015
+            </p>
+            <p class="post-tag">
+                <span><a href="http://101.201.198.151:4000/category/#Linux"><span class="octicon octicon-list-unordered"></span>&nbsp;Linux</a></span>
+                <span>
+                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#make"><span class="octicon octicon-tag"></span>&nbsp;make</a>
+                    
+                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#Linux"><span class="octicon octicon-tag"></span>&nbsp;Linux</a>
+                    
+                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#script"><span class="octicon octicon-tag"></span>&nbsp;script</a>
+                    
+                </span>
+            </p>
+          </header>
+          <hr class="boundary">
+          <article>
+            <div class="toc"></div>
+
+<p>代码变成可执行文件，叫做编译（compile）；先编译这个，还是先编译那个（即编译的安排），叫做构建（build）</p>
+
+<p>指定规则进行编译，默认为当前目录下的Makefile文件</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make -f rules.txt
+或者
+make --file=rules.txt
+
+</code></pre>
+</div>
+
+<p>#Makefile 文件结构</p>
+
+<p>Makefile文件由一系列规则（rules）构成。每条规则的形式如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;target&gt; : &lt;prerequisites&gt; 
+[tab]  &lt;commands&gt;
+
+</code></pre>
+</div>
+
+<p>上面第一行冒号前面的部分，叫做”目标”（target），冒号后面的部分叫做”前置条件”（prerequisites）；第二行必须由一个tab键起首，后面跟着”命令”（commands）。</p>
+
+<p>“目标”是必需的，不可省略；”前置条件”和”命令”都是可选的，但是两者之中必须至少存在一个。</p>
+
+<p>##目标（target）</p>
+
+<p>一个目标（target）就构成一条规则。目标通常是文件名，指明Make命令所要构建的对象 。目标可以是一个文件名，也可以是多个文件名，之间用空格分隔。</p>
+
+<p>除了文件名，目标还可以是某个操作的名字，这称为”伪目标”（phony target）。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>clean:
+	rm *.o
+
+</code></pre>
+</div>
+<p>上面代码的目标是clean，它不是文件名，而是一个操作的名字，属于”伪目标 “，作用是删除对象文件。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make  clean
+
+</code></pre>
+</div>
+
+<p>但是，如果当前目录中，正好有一个文件叫做clean，那么这个命令不会执行。因为Make发现clean文件已经存在，就认为没有必要重新构建了，就不会执行指定的rm命令。</p>
+
+<p>为了避免这种情况，可以明确声明clean是”伪目标”，写法如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">clean</span>
+<span class="nl">clean</span><span class="o">:</span>
+	rm <span class="k">*</span>.o temp
+
+</code></pre>
+</div>
+
+<p>声明clean是”伪目标”之后，make就不会去检查是否存在一个叫做clean的文件，而是每次运行都执行对应的命令。像.PHONY这样的内置目标名还有不少，可以查看手册。</p>
+
+<p>如果Make命令运行时没有指定目标，默认会执行Makefile文件的第一个目标。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make
+
+</code></pre>
+</div>
+
+<p>##前置条件（prerequisites）</p>
+
+<p>前置条件通常是一组文件名，之间用空格分隔。它指定了”目标”是否重新构建的判断标准：只要有一个前置文件不存在，或者有过更新（前置文件的last-modification时间戳比目标的时间戳新），”目标”就需要重新构建。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>result.txt: source.txt
+	cp source.txt result.txt
+
+</code></pre>
+</div>
+
+<p>如果当前目录中，source.txt 已经<strong>存在</strong>，那么make result.txt可以正常运行，否则必须再写一条规则，来生成 source.txt 。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source.txt:
+	echo "this is the source" &gt; source.txt
+
+</code></pre>
+</div>
+
+<p>上面代码中，source.txt后面没有前置条件，就意味着它跟其他文件都无关，只要这个文件还<strong>不存在</strong>，每次调用make source.txt，它都会生成。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make result.txt
+$ make result.txt
+
+</code></pre>
+</div>
+
+<p>上面命令连续执行两次make result.txt。第一次执行会先新建 source.txt，然后再新建 result.txt。第二次执行，Make发现 source.txt <strong>没有变动</strong>（时间戳晚于 result.txt），就不会执行任何操作，result.txt 也不会重新生成。</p>
+
+<p>如果需要生成多个文件，往往采用下面的写法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source: file1 file2 file3
+
+</code></pre>
+</div>
+
+<p>上面代码中，source 是一个伪目标，只有三个前置文件，没有任何对应的命令。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make source
+
+</code></pre>
+</div>
+
+<p>执行make source命令后，就会一次性生成 file1，file2，file3 三个文件</p>
+
+<p>##命令（commands）</p>
+
+<p>命令（commands）表示如何更新目标文件，由一行或多行的Shell命令组成。它是构建”目标”的具体指令，它的运行结果通常就是生成目标文件。</p>
+
+<p>每行命令之前必须有一个tab键。如果想用其他键，可以用内置变量.RECIPEPREFIX声明。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.RECIPEPREFIX = &gt;
+all:
+&gt; echo Hello, world
+
+</code></pre>
+</div>
+
+<p>上面代码用.RECIPEPREFIX指定，大于号（&gt;）替代tab键。所以，每一行命令的起首变成了大于号，而不是tab键。</p>
+
+<p>需要注意的是，每行命令在一个单独的shell中执行。这些Shell之间没有继承关系。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var-lost:
+    export foo=bar
+    echo "foo=[$$foo]"
+
+</code></pre>
+</div>
+<p>上面代码执行后（make var-lost），取不到foo的值。因为两行命令在两个不同的进程执行。一个解决办法是将两行命令写在一行，中间用分号分隔。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var-kept:
+    export foo=bar; echo "foo=[$$foo]"
+
+</code></pre>
+</div>
+
+<p>另一个解决办法是在换行符前加反斜杠转义。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var-kept:
+    export foo=bar; \
+    echo "foo=[$$foo]"
+
+</code></pre>
+</div>
+
+<p>最后一个方法是加上.ONESHELL:命令。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.ONESHELL:
+var-kept:
+    export foo=bar; 
+    echo "foo=[$$foo]"
+
+</code></pre>
+</div>
+
+<p>#Makefile 文件语法</p>
+
+<p><strong><code class="highlighter-rouge">#</code>号注释</strong></p>
+
+<p>##通配符</p>
+
+<p>通配符（wildcard）用来指定一组符合条件的文件名。Makefile 的通配符与 Bash 一致，主要有星号（*）、问号（？）和 […] 。比如， *.o 表示所有后缀名为o的文件。</p>
+
+<p>##回声（echoing）</p>
+
+<p>正常情况下，make会打印每条命令，然后再执行，这就叫做回声（echoing）。</p>
+
+<p>在命令的前面加上@，就可以关闭回声。</p>
+
+<p>##模式匹配</p>
+
+<p>Make命令允许对文件名，进行类似正则运算的匹配，主要用到的匹配符是%。比如，假定当前目录下有 f1.c 和 f2.c 两个源码文件，需要将它们编译为对应的对象文件。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%.o: %.c
+
+</code></pre>
+</div>
+
+<p>等同于下面的写法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>f1.o: f1.c
+f2.o: f2.c
+
+</code></pre>
+</div>
+
+<p>使用匹配符%，可以将大量同类型的文件，只用一条规则就完成构建。</p>
+
+<blockquote>
+  <p>待验证</p>
+
+  <p>关于模式匹配有个误解区，%.o:%.c并不是直接去匹配文件目录里的文件,而是匹配上下文的东西:</p>
+
+  <p><code class="highlighter-rouge">%.o:%.c</code></p>
+
+  <p><code class="highlighter-rouge">gcc main.c -o main.o</code></p>
+
+  <p><code class="highlighter-rouge">main.o:main.c</code></p>
+
+  <p>当我们make的时候 会执行 gcc main.c -o main.o</p>
+</blockquote>
+
+<p>##变量和赋值符</p>
+
+<p>Makefile 允许使用等号自定义变量。</p>
+
+<p>调用时，变量需要放在 $( ) 之中。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>txt = Hello World
+test:
+    @echo $(txt)
+
+</code></pre>
+</div>
+
+<p>调用Shell变量，需要在美元符号前，再加一个美元符号，这是因为Make命令会对美元符号转义。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>test:
+    @echo $$HOME
+
+</code></pre>
+</div>
+
+<p>有时，变量的值可能指向另一个变量。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>v1 = $(v2)
+
+</code></pre>
+</div>
+
+<p>上面代码中，变量 v1 的值是另一个变量 v2。这时会产生一个问题，v1 的值到底在定义时扩展（<strong>静态扩展</strong>），还是在运行时扩展（<strong>动态扩展</strong>）？如果 v2 的值是动态的，这两种扩展方式的结果可能会差异很大。</p>
+
+<p>为了解决类似问题，Makefile一共提供了四个赋值运算符 （=、:=、？=、+=），它们的区别请看<a href="http://stackoverflow.com/questions/448910/makefile-variable-assignment">StackOverflow</a>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>VARIABLE = value
+# 在执行时扩展，允许递归扩展。
+
+VARIABLE := value
+# 在定义时扩展。
+
+VARIABLE ?= value
+# 只有在该变量为空时才设置值。
+
+VARIABLE += value
+# 将值追加到变量的尾端。
+
+</code></pre>
+</div>
+
+<p>##内置变量（Implicit Variables）</p>
+
+<p>Make命令提供一系列内置变量，比如，$(CC) 指向当前使用的编译器，$(MAKE) 指向当前使用的Make工具。这主要是为了跨平台的兼容性，详细的内置变量清单见<a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">手册</a>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>output:
+    $(CC) -o output input.c
+
+</code></pre>
+</div>
+
+<p>##自动变量（Automatic Variables）</p>
+
+<p>（1）<code class="highlighter-rouge">$@</code></p>
+
+<p><code class="highlighter-rouge">$@</code>指代当前目标，就是Make命令当前构建的那个目标。比如，make foo的 <code class="highlighter-rouge">$@</code> 就指代foo。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a.txt b.txt: 
+    touch $@
+
+</code></pre>
+</div>
+<p>等同于下面的写法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a.txt:
+    touch a.txt
+b.txt:
+    touch b.txt
+
+</code></pre>
+</div>
+
+<p>（2）<code class="highlighter-rouge">$&lt;</code></p>
+
+<p><code class="highlighter-rouge">$&lt;</code> 指代第一个前置条件。比如，规则为 t: p1 p2，那么<code class="highlighter-rouge">$&lt;</code> 就指代p1。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a.txt: b.txt c.txt
+    cp $&lt; $@ 
+
+</code></pre>
+</div>
+
+<p>等同于下面的写法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a.txt: b.txt c.txt
+    cp b.txt a.txt 
+
+</code></pre>
+</div>
+
+<p>（3）<code class="highlighter-rouge">$?</code></p>
+
+<p><code class="highlighter-rouge">$?</code> 指代比目标更新的所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，其中 p2 的时间戳比 t 新，<code class="highlighter-rouge">$?</code>就指代p2。</p>
+
+<p>（4）<code class="highlighter-rouge">$^</code></p>
+
+<p><code class="highlighter-rouge">$^</code> 指代所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，那么 <code class="highlighter-rouge">$^</code> 就指代 p1 p2 。</p>
+
+<p>（5）<code class="highlighter-rouge">$*</code></p>
+
+<p><code class="highlighter-rouge">$*</code> 指代匹配符 % 匹配的部分， 比如% 匹配 f1.txt 中的f1 ，<code class="highlighter-rouge">$*</code> 就表示 f1。</p>
+
+<p>（6）<code class="highlighter-rouge">$(@D)</code> 和 <code class="highlighter-rouge">$(@F)</code></p>
+
+<p><code class="highlighter-rouge">$(@D) </code>和<code class="highlighter-rouge"> $(@F) </code>分别指向 <code class="highlighter-rouge">$@</code> 的目录名和文件名。比如，<code class="highlighter-rouge">$@</code>是 src/input.c，那么<code class="highlighter-rouge">$(@D)</code> 的值为 src ，<code class="highlighter-rouge">$(@F) </code>的值为 input.c。</p>
+
+<p>（7）<code class="highlighter-rouge">$(&lt;D)</code> 和 <code class="highlighter-rouge">$(&lt;F)</code></p>
+
+<p><code class="highlighter-rouge">$(&lt;D) </code>和<code class="highlighter-rouge"> $(&lt;F) </code>分别指向 <code class="highlighter-rouge">$&lt; </code>的目录名和文件名。</p>
+
+<p>所有的自动变量清单，请看<a href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">手册</a>。下面是自动变量的一个例子。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dest/%.txt: src/%.txt
+    @[ -d dest ] || mkdir dest
+    cp $&lt; $@
+
+</code></pre>
+</div>
+
+<p>上面代码将 src 目录下的 txt 文件，拷贝到 dest 目录下。首先判断 dest 目录是否存在，如果不存在就新建，然后，<code class="highlighter-rouge">$&lt;</code> 指代前置文件（src/%.txt）， <code class="highlighter-rouge">$@</code> 指代目标文件（dest/%.txt）。</p>
+
+<p>##判断与循环</p>
+
+<p>Makefile使用 Bash 语法，完成判断和循环。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ifeq ($(CC),gcc)
+  libs=$(libs_for_gcc)
+else
+  libs=$(normal_libs)
+endif
+
+</code></pre>
+</div>
+
+<p>上面代码判断当前编译器是否 gcc ，然后指定不同的库文件。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>LIST = one two three
+all:
+    for i in $(LIST); do \
+        echo $$i; \
+    done
+    
+# 等同于
+
+all:
+    for i in one two three; do \
+        echo $i; \
+    done
+</code></pre>
+</div>
+
+<p>##函数</p>
+
+<p>Makefile 还可以使用函数，格式如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(function arguments)
+# 或者
+${function arguments}
+</code></pre>
+</div>
+
+<p>Makefile提供了许多<a href="http://www.gnu.org/software/make/manual/html_node/Functions.html">内置函数</a>，可供调用。下面是几个常用的内置函数。</p>
+
+<p>（1）shell 函数</p>
+
+<p>shell 函数用来执行 shell 命令</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>srcfiles := $(shell echo src/{00..99}.txt)
+</code></pre>
+</div>
+
+<p>（2）wildcard 函数</p>
+
+<p>wildcard 函数用来在 Makefile 中，替换 Bash 的通配符。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>srcfiles := $(wildcard src/*.txt)
+
+</code></pre>
+</div>
+
+<p>（3）subst 函数</p>
+
+<p>subst 函数用来文本替换，格式如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(subst from,to,text)
+</code></pre>
+</div>
+
+<p>下面的例子将字符串”feet on the street”替换成”fEEt on the strEEt”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(subst ee,EE,feet on the street)
+</code></pre>
+</div>
+
+<p>下面是一个稍微复杂的例子。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>comma:= ,
+empty:=
+# space变量用两个空变量作为标识符，当中是一个空格
+space:= $(empty) $(empty)
+foo:= a b c
+bar:= $(subst $(space),$(comma),$(foo))
+# bar is now `a,b,c'.
+</code></pre>
+</div>
+
+<p>（4）patsubst函数</p>
+
+<p>patsubst 函数用于模式匹配的替换，格式如下。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(patsubst pattern,replacement,text)
+</code></pre>
+</div>
+
+<p>下面的例子将文件名”x.c.c bar.c”，替换成”x.c.o bar.o”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(patsubst %.c,%.o,x.c.c bar.c)
+</code></pre>
+</div>
+
+<p>（5）替换后缀名</p>
+
+<p>替换后缀名函数的写法是：变量名 + 冒号 + 后缀名替换规则。它实际上patsubst函数的一种简写形式。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>min: $(OUTPUT:.js=.min.js)
+</code></pre>
+</div>
+
+<p>上面代码的意思是，将变量OUTPUT中的后缀名 .js 全部替换成 .min.js 。</p>
+
+<p>#实例</p>
+
+<p>（1）执行多个目标</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">cleanall cleanobj cleandiff</span>
+
+<span class="nl">cleanall </span><span class="o">:</span> <span class="nf">cleanobj cleandiff</span>
+        <span class="err">rm</span> <span class="err">program</span>
+
+<span class="nl">cleanobj </span><span class="o">:</span>
+        <span class="err">rm</span> <span class="err">*.o</span>
+
+<span class="nl">cleandiff </span><span class="o">:</span>
+        <span class="err">rm</span> <span class="err">*.diff</span>
+</code></pre>
+</div>
+
+<p>上面代码可以调用不同目标，删除不同后缀名的文件，也可以调用一个目标（cleanall），删除所有指定类型的文件。</p>
+
+<p>（2）编译C语言项目</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nl">edit </span><span class="o">:</span> <span class="nf">main.o kbd.o command.o display.o </span>
+    <span class="err">cc</span> <span class="err">-o</span> <span class="err">edit</span> <span class="err">main.o</span> <span class="err">kbd.o</span> <span class="err">command.o</span> <span class="err">display.o</span>
+
+<span class="nl">main.o </span><span class="o">:</span> <span class="nf">main.c defs.h</span>
+    <span class="err">cc</span> <span class="err">-c</span> <span class="err">main.c</span>
+<span class="nl">kbd.o </span><span class="o">:</span> <span class="nf">kbd.c defs.h command.h</span>
+    <span class="err">cc</span> <span class="err">-c</span> <span class="err">kbd.c</span>
+<span class="nl">command.o </span><span class="o">:</span> <span class="nf">command.c defs.h command.h</span>
+    <span class="err">cc</span> <span class="err">-c</span> <span class="err">command.c</span>
+<span class="nl">display.o </span><span class="o">:</span> <span class="nf">display.c defs.h</span>
+    <span class="err">cc</span> <span class="err">-c</span> <span class="err">display.c</span>
+
+<span class="nl">clean </span><span class="o">:</span>
+     <span class="err">rm</span> <span class="err">edit</span> <span class="err">main.o</span> <span class="err">kbd.o</span> <span class="err">command.o</span> <span class="err">display.o</span>
+
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">edit clean</span>
+
+</code></pre>
+</div>
+
+          </article>
+          <hr class="boundary">
+          <div id="post-share" class="bdsharebuttonbox">
+              <a href="#" class="bds_more" data-cmd="more"></a>
+              <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+              <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+              <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+              <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+              <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+          </div>
+        </div>
+        <div class="pad-min"></div>
+        <div id="post-comment" class="sheet post">
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+    <div class="content-navigation col-lg-3">
+      <div class="shadow-bottom-center" >
+        <div class="content-navigation-toc">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Toc
+            </div>
+            <div class="content-navigation-list toc"></div>
+        </div>
+        <div class="content-navigation-tag">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Tags
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+                    <li>
+                        <a href="http://101.201.198.151:4000/tags#make"><span class="octicon octicon-tag"></span>&nbsp;make</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://101.201.198.151:4000/tags#Linux"><span class="octicon octicon-tag"></span>&nbsp;Linux</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://101.201.198.151:4000/tags#script"><span class="octicon octicon-tag"></span>&nbsp;script</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="content-navigation-related">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Related
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    
+
+                    
+
+                    
+                        
+                            <li>
+                                <a href="http://101.201.198.151:4000/2015-05-07/js-summary/">Javascript 总结</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://101.201.198.151:4000/2015-02-06/closure/">JS 闭包</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://101.201.198.151:4000/2015-01-22/linux-shell/">shell</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+    </div>
+
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
+    </div>
+</div>
+
+    <footer  class="footnote footnote-tiffany">
+        <div class="container">
+                <a class="foot-item" href="mailto:dubuyuye@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
+                <a class="foot-item" href="https://github.com/dubuyuye" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+                <a class="foot-item" href="http://101.201.198.151:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="http://101.201.198.151:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                &nbsp;
+                <a href="http://blog.rainyalley.com/"><span class="word-keep">&copy; RainyAlley</span></a>
+        </div>
+    </footer>
+
+
+</body>
+</html>
