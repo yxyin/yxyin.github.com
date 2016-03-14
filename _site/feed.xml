@@ -3,10 +3,10 @@
   <channel>
     <title>RainyAlley</title>
     <description>Developer</description>
-    <link>http://101.201.198.151:4000/</link>
-    <atom:link href="http://101.201.198.151:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Mar 2016 11:52:18 +0800</pubDate>
-    <lastBuildDate>Mon, 14 Mar 2016 11:52:18 +0800</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 14 Mar 2016 21:36:20 +0800</pubDate>
+    <lastBuildDate>Mon, 14 Mar 2016 21:36:20 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -409,8 +409,8 @@ free 指向下一段可用内存，内存分配时递增的地址就是通过它
 
 </description>
         <pubDate>Thu, 21 May 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-05-21/the-scheme-eval/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-05-21/the-scheme-eval/</guid>
+        <link>/2015-05-21/the-scheme-eval/</link>
+        <guid isPermaLink="true">/2015-05-21/the-scheme-eval/</guid>
         
         <category>lisp</category>
         
@@ -427,12 +427,12 @@ free 指向下一段可用内存，内存分配时递增的地址就是通过它
         <title>Javascript 总结</title>
         <description>&lt;p&gt;超级长图，小心流量。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/JavaScriptMindMap.jpg&quot; alt=&quot;javascript&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/JavaScriptMindMap.jpg&quot; alt=&quot;javascript&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 07 May 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-05-07/js-summary/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-05-07/js-summary/</guid>
+        <link>/2015-05-07/js-summary/</link>
+        <guid isPermaLink="true">/2015-05-07/js-summary/</guid>
         
         <category>Javascript</category>
         
@@ -1077,8 +1077,8 @@ java.util.Enumeration&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 22 Apr 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-04-22/design-pattern/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-04-22/design-pattern/</guid>
+        <link>/2015-04-22/design-pattern/</link>
+        <guid isPermaLink="true">/2015-04-22/design-pattern/</guid>
         
         <category>design</category>
         
@@ -1103,7 +1103,7 @@ java.util.Enumeration&lt;/p&gt;
 
 &lt;p&gt;RMI示意图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/rmi.jpg&quot; alt=&quot;rmi&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/rmi.jpg&quot; alt=&quot;rmi&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;#Demo&lt;/p&gt;
 
@@ -1171,8 +1171,8 @@ java.util.Enumeration&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 09 Apr 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-04-09/rmi/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-04-09/rmi/</guid>
+        <link>/2015-04-09/rmi/</link>
+        <guid isPermaLink="true">/2015-04-09/rmi/</guid>
         
         <category>rmi</category>
         
@@ -1238,11 +1238,11 @@ java.util.Enumeration&lt;/p&gt;
 
 &lt;p&gt;get&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/get.png&quot; alt=&quot;get&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/get.png&quot; alt=&quot;get&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;post&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/post.png&quot; alt=&quot;post&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/post.png&quot; alt=&quot;post&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;从post中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Content-Type:application/x-www-form-urlencoded&lt;/code&gt;可以看到，虽然数据为中文，但是在传递的时候，经过了一次urlEncode，这样一来，在数据交换层面就可以屏蔽编码的不一致性。&lt;/p&gt;
 
@@ -1289,7 +1289,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 
 &lt;p&gt;get与post结果如下，果然不负众望地乱码了(如果不乱码，我还写个毛？)。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/param.png&quot; alt=&quot;param&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/param.png&quot; alt=&quot;param&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;现在我们从Servlet中看看请求体, 修改上面的Servlet代码如下：&lt;/p&gt;
 
@@ -1320,13 +1320,13 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 &lt;p&gt;get与post结果如下,Servlet将http头部解析完成后，将请求体留了下来供应用程序使用, 这是考虑到http请求可能有多种 &lt;a href=&quot;http://www.w3school.com.cn/tags/att_form_enctype.asp&quot;&gt;enctype&lt;/a&gt; , 请求体的结构可能不同,
 例如，&lt;code class=&quot;highlighter-rouge&quot;&gt;multipart/form-data&lt;/code&gt;就不是这样的key=value结构，关于multipart/form-data，我在这篇 &lt;a href=&quot;http://blog.rainynight.top/2014-04-15/fileupload/&quot;&gt;fileupload&lt;/a&gt; 中曾有过简要分析。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/body-utf.png&quot; alt=&quot;body-utf&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/body-utf.png&quot; alt=&quot;body-utf&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;从图中可以看到, 设置了正确的字符集后, 服务端将能够正确地解析, get部分什么都没有，这是因为get没有请求体。&lt;/p&gt;
 
 &lt;p&gt;让我们换种字符集试试, 比如, 将servet中的”utf-8”换成”iso-8859-1”。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/body-iso.png&quot; alt=&quot;body-iso&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/body-iso.png&quot; alt=&quot;body-iso&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;嘿，果然如我所料，而且这个字符串好像很眼熟，和req.getParameter(“param”)结果是一样的，没错，事实上，tomcat默认的字符集就是&lt;code class=&quot;highlighter-rouge&quot;&gt;iso-8859-1&lt;/code&gt;, 我们从中可以得到一个推论，tomcat使用默认的字符集，对http请求进行过一次decode。&lt;/p&gt;
 
@@ -1342,7 +1342,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 
 &lt;p&gt;为什么要 &lt;a href=&quot;http://www.w3school.com.cn/jsref/jsref_encodeuri.asp&quot;&gt;encodeURI&lt;/a&gt; 两次？talk is cheap， let’s code！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/encodeURI.png&quot; alt=&quot;encodeURI&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/encodeURI.png&quot; alt=&quot;encodeURI&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;注意观察这张图片，从中发现了什么? 没错，第一次encodeURI生成了HTTP一节的示例中一样的结果。
 我们在浏览器窗口中输入 “http://localhost:8080/hsp?param=%E4%BD%A0%E5%A5%BD%E5%85%A8%E4%B8%96%E7%95%8C”, 会发现它变成了 “http://localhost:8080/hsp?param=你好全世界”,
@@ -1361,12 +1361,12 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/servlet-encode/world.png&quot; alt=&quot;world&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/servlet-encode/world.png&quot; alt=&quot;world&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 17 Mar 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-03-17/servlet-encode/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-03-17/servlet-encode/</guid>
+        <link>/2015-03-17/servlet-encode/</link>
+        <guid isPermaLink="true">/2015-03-17/servlet-encode/</guid>
         
         <category>servlet</category>
         
@@ -1454,7 +1454,7 @@ urlEncode只能识别ASCII码，可以想象的是，那些urlEncode不能识别
 
 &lt;p&gt;在http元素也就是FilterChain中，以责任链的形式存在多个&lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt;，这些Filter真正执行过滤操作，http标签中的许多配置项，如&lt;code class=&quot;highlighter-rouge&quot;&gt; &amp;lt;security:http-basic/&amp;gt;&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;security:logout/&amp;gt;&lt;/code&gt;等，其实就是创建指定的Filter，以下表格列举了这些Filter。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://101.201.198.151:4000/static/img/spring-security-filter.png&quot; alt=&quot;filter&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/spring-security-filter.png&quot; alt=&quot;filter&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;利用别名，我们可以将自定义的过滤器加入指定的位置，或者替换其中的某个过滤器。&lt;/p&gt;
 
@@ -2065,8 +2065,8 @@ alter table user_role add constraint FK_user_role_Reference_user foreign key (us
 
 </description>
         <pubDate>Thu, 12 Mar 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-03-12/spring-security/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-03-12/spring-security/</guid>
+        <link>/2015-03-12/spring-security/</link>
+        <guid isPermaLink="true">/2015-03-12/spring-security/</guid>
         
         <category>spring</category>
         
@@ -2213,8 +2213,8 @@ public String release(@Valid Article article, BindingResult bindingResult, HttpS
 
 </description>
         <pubDate>Thu, 05 Mar 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-03-05/validator/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-03-05/validator/</guid>
+        <link>/2015-03-05/validator/</link>
+        <guid isPermaLink="true">/2015-03-05/validator/</guid>
         
         <category>Bean</category>
         
@@ -2272,8 +2272,8 @@ public String release(@Valid Article article, BindingResult bindingResult, HttpS
 
 </description>
         <pubDate>Sun, 22 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-02-22/javajs/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-02-22/javajs/</guid>
+        <link>/2015-02-22/javajs/</link>
+        <guid isPermaLink="true">/2015-02-22/javajs/</guid>
         
         <category>ScriptEngineManager</category>
         
@@ -2628,8 +2628,8 @@ public String release(@Valid Article article, BindingResult bindingResult, HttpS
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 13 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-02-13/sqlappend/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-02-13/sqlappend/</guid>
+        <link>/2015-02-13/sqlappend/</link>
+        <guid isPermaLink="true">/2015-02-13/sqlappend/</guid>
         
         <category>sql</category>
         
@@ -2773,8 +2773,8 @@ public String release(@Valid Article article, BindingResult bindingResult, HttpS
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 11 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://101.201.198.151:4000/2015-02-11/webtool/</link>
-        <guid isPermaLink="true">http://101.201.198.151:4000/2015-02-11/webtool/</guid>
+        <link>/2015-02-11/webtool/</link>
+        <guid isPermaLink="true">/2015-02-11/webtool/</guid>
         
         <category>ajax</category>
         

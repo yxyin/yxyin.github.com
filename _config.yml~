@@ -26,7 +26,7 @@ disqus_shortname: "rainyalley"
 #imgrepo: "http://blog.rainyalley.com/static/img"
 
 
-#url: "http://101.201.198.151:4000"
-#imgrepo: "http://101.201.198.151:4000/static/img"
+url: "http://101.201.198.151:4000"
+imgrepo: "http://101.201.198.151:4000/static/img"
 gems: [jekyll-paginate]
 

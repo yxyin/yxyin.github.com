@@ -9,17 +9,17 @@
     <meta name="keywords" content="scheme 解释器, lisp, lisp,scheme,eval, RainyAlley" />
     <meta name="description" content="scheme 解释器, lisp, lisp,scheme,eval, 前段时间针对 scheme 语言写了一个解释器，现在就 fork 一下当时想法，整理一下其中的脉络，做一个思维快照，以期下次用C语言来实现时可以顺利地进行。成品在此：scheme-bootstrap。" />
     <meta name="theme-color" content="#2CA6CB"/>
-    <link rel="shortcut icon" type="image/x-icon" media="screen" href="http://101.201.198.151:4000/favicon.ico" />
-    <link rel="canonical" href="http://101.201.198.151:4000/2015-05-21/the-scheme-eval/" />
-    <link rel="alternate" type="application/rss+xml" title="RainyAlley" href="http://101.201.198.151:4000/feed.xml"  />
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="/favicon.ico" />
+    <link rel="canonical" href="/2015-05-21/the-scheme-eval/" />
+    <link rel="alternate" type="application/rss+xml" title="RainyAlley" href="/feed.xml"  />
 
     <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/octicons/octicons.css" />
-    <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/octicons/octicons.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://101.201.198.151:4000/static/js/script.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
 </head>
 
 
@@ -37,31 +37,31 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://101.201.198.151:4000/">RainyAlley</a>
+                    <a class="navbar-brand" href="/">RainyAlley</a>
                     <p class="navbar-text">Developer</p>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         
                         <li>
-                        <a href="http://101.201.198.151:4000/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
+                        <a href="/" class="word-keep"><span class="octicon octicon-book"></span></span>&nbsp;&nbsp;Blog</a>
                         </li>
                         
                         
                         <li>
-                            <a href="http://101.201.198.151:4000/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
-                        </li>
-                        
-                        
-                        
-                        <li>
-                            <a href="http://101.201.198.151:4000/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                            <a href="/archive/" class="word-keep"><span class="octicon octicon-repo"></span>&nbsp;&nbsp;Archive</a>
                         </li>
                         
                         
                         
                         <li>
-                            <a href="http://101.201.198.151:4000/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
+                            <a href="/category/" class="word-keep"><span class="octicon octicon-list-unordered"></span>&nbsp;&nbsp;Category</a>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/tags/" class="word-keep"><span class="octicon octicon-tag"></span>&nbsp;&nbsp;Tag</a>
                         </li>
                         
                         
@@ -83,10 +83,10 @@
 
 
     <div class="container">
-        <link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/highlight.css" />
-<link rel="stylesheet" type="text/css" href="http://101.201.198.151:4000/static/css/post.css" />
-<script type="text/javascript" src="http://101.201.198.151:4000/static/js/post.js"></script>
-<script type="text/javascript" src="http://101.201.198.151:4000/static/js/toc.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/css/highlight.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/post.css" />
+<script type="text/javascript" src="/static/js/post.js"></script>
+<script type="text/javascript" src="/static/js/toc.js"></script>
 <div class="row">
     <div class="content col-lg-9">
         <div class="sheet post">
@@ -96,13 +96,13 @@
                 <span class="octicon octicon-clock"></span> May 21, 2015
             </p>
             <p class="post-tag">
-                <span><a href="http://101.201.198.151:4000/category/#lisp"><span class="octicon octicon-list-unordered"></span>&nbsp;lisp</a></span>
+                <span><a href="/category/#lisp"><span class="octicon octicon-list-unordered"></span>&nbsp;lisp</a></span>
                 <span>
-                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#lisp"><span class="octicon octicon-tag"></span>&nbsp;lisp</a>
+                    <a class="word-keep" href="/tags/#lisp"><span class="octicon octicon-tag"></span>&nbsp;lisp</a>
                     
-                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#scheme"><span class="octicon octicon-tag"></span>&nbsp;scheme</a>
+                    <a class="word-keep" href="/tags/#scheme"><span class="octicon octicon-tag"></span>&nbsp;scheme</a>
                     
-                    <a class="word-keep" href="http://101.201.198.151:4000/tags/#eval"><span class="octicon octicon-tag"></span>&nbsp;eval</a>
+                    <a class="word-keep" href="/tags/#eval"><span class="octicon octicon-tag"></span>&nbsp;eval</a>
                     
                 </span>
             </p>
@@ -538,15 +538,15 @@ free 指向下一段可用内存，内存分配时递增的地址就是通过它
                 <ul>
                     
                     <li>
-                        <a href="http://101.201.198.151:4000/tags#lisp"><span class="octicon octicon-tag"></span>&nbsp;lisp</a>
+                        <a href="/tags#lisp"><span class="octicon octicon-tag"></span>&nbsp;lisp</a>
                     </li>
                     
                     <li>
-                        <a href="http://101.201.198.151:4000/tags#scheme"><span class="octicon octicon-tag"></span>&nbsp;scheme</a>
+                        <a href="/tags#scheme"><span class="octicon octicon-tag"></span>&nbsp;scheme</a>
                     </li>
                     
                     <li>
-                        <a href="http://101.201.198.151:4000/tags#eval"><span class="octicon octicon-tag"></span>&nbsp;eval</a>
+                        <a href="/tags#eval"><span class="octicon octicon-tag"></span>&nbsp;eval</a>
                     </li>
                     
                 </ul>
@@ -583,8 +583,8 @@ free 指向下一段可用内存，内存分配时递增的地址就是通过它
         <div class="container">
                 <a class="foot-item" href="mailto:dubuyuye@yeah.net" target="_blank"><span class="octicon octicon-mail"></span></a>
                 <a class="foot-item" href="https://github.com/dubuyuye" target="_blank"><span class="octicon octicon-mark-github"></span></a>
-                <a class="foot-item" href="http://101.201.198.151:4000/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
-                <a class="foot-item" href="http://101.201.198.151:4000/link/"><span class="octicon octicon-link-external"></span></a>
+                <a class="foot-item" href="/feed.xml" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="/link/"><span class="octicon octicon-link-external"></span></a>
                 &nbsp;
                 <a href="http://blog.rainyalley.com/"><span class="word-keep">&copy; RainyAlley</span></a>
         </div>
