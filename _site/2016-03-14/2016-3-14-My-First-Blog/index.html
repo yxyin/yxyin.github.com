@@ -1,0 +1,51 @@
+<h2 id="section">记录工作，学习和生活当中的点点滴滴</h2>
+
+<p>不知不觉间，研究生毕业已快三年。 从事<strong>性能测试</strong>的工作也已有三年，这其中既有辛酸和苦闷，又有成就与收获。 适逢公司裁员，压力倍增，回顾过去的三年，竟不知该从何说起。 这也是我下决心开始写技术博客的一个原因。</p>
+
+<p>前两天偶遇了静态blog生成工具jekyll，试了一下感觉很方便好用，以后会经常更新blog。</p>
+
+<p>下面是对一些快捷健的标注，之后会对粘贴代码做一个实验
+### Built exclusively for Markdown ###
+<strong>MarkdownPad</strong> is a full-featured Markdown editor for Windows.
+Enjoy first-class Markdown support with easy access to  Markdown syntax and convenient keyboard shortcuts.</p>
+
+<p>Give them a try:##  ##</p>
+
+<ul>
+  <li><strong>Bold</strong> (<code class="highlighter-rouge">Ctrl+B</code>) and <em>Italic</em> (<code class="highlighter-rouge">Ctrl+I</code>)</li>
+  <li>Quotes (<code class="highlighter-rouge">Ctrl+Q</code>)</li>
+  <li>Code blocks (<code class="highlighter-rouge">Ctrl+K</code>)</li>
+  <li>Headings 1, 2, 3 (<code class="highlighter-rouge">Ctrl+1</code>, <code class="highlighter-rouge">Ctrl+2</code>, <code class="highlighter-rouge">Ctrl+3</code>)</li>
+  <li>Lists (<code class="highlighter-rouge">Ctrl+U</code> and <code class="highlighter-rouge">Ctrl+Shift+O</code>)</li>
+</ul>
+
+<h3 id="java-code-test">Java Code test</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="c1">//Author: Yunxin Yin</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hanio</span> <span class="o">{</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">hanio</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">char</span> <span class="n">one</span><span class="o">,</span> <span class="kt">char</span> <span class="n">two</span><span class="o">,</span> <span class="kt">char</span> <span class="n">three</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Move from "</span> <span class="o">+</span> <span class="n">one</span> <span class="o">+</span> <span class="s">" to "</span> <span class="o">+</span> <span class="n">three</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="k">else</span> <span class="o">{</span>
+			<span class="n">hanio</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">one</span><span class="o">,</span> <span class="n">three</span><span class="o">,</span> <span class="n">two</span><span class="o">);</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Move from "</span> <span class="o">+</span> <span class="n">one</span> <span class="o">+</span> <span class="s">" to "</span> <span class="o">+</span> <span class="n">three</span><span class="o">);</span>
+			<span class="n">hanio</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">two</span><span class="o">,</span> <span class="n">one</span><span class="o">,</span> <span class="n">three</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">//Add commit again</span>
+		<span class="c1">//Test at home</span>
+		<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+		<span class="n">hanio</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="sc">'A'</span><span class="o">,</span> <span class="sc">'B'</span><span class="o">,</span> <span class="sc">'C'</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+
+</code></pre>
+</div>
