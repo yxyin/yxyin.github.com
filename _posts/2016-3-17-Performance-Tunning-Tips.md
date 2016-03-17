@@ -5,7 +5,7 @@ tags: 性能测试
 categories: 性能测试
 ---
 
- - **Performance tuning** is usually about focusing on a few key variables. We will highlight the most
+1. **Performance tuning** is usually about focusing on a few key variables. We will highlight the most
 common tuning knobs that can often improve the speed of the average application by 200% or
 more relative to the default configuration. The first step, however, should be to use and be
 guided by the tools and methodologies. Gather data, analyze it and create hypotheses: then test
@@ -21,33 +21,33 @@ are really critical, since the universal experience of programmers who have been
 measurement tools has been that their intuitive guesses fail." (Donald Knuth, Structured
 Programming with go to Statements, Stanford University, 1974, Association for Computing
 Machinery)
- - There is a seemingly daunting number of tuning knobs. We try to document everything in detail
+1. There is a seemingly daunting number of tuning knobs. We try to document everything in detail
 in case you hit a problem in that area; however, unless you are trying to squeeze out every last
 drop of performance, we **do not recommend a close study of every point**.
- - In general, we advocate a **bottom-up** approach. For example, with a typical WebSphere
+1. In general, we advocate a **bottom-up** approach. For example, with a typical WebSphere
 Application Server application, start with the operating system, then Java, then WAS, then the
 application, etc. Ideally, investigate these at the same time. The main goal of a performance
 tuning exercise is to iteratively determine the bottleneck restricting response times and
 throughput. For example, investigate operating system CPU and memory usage, followed by
 Java garbage collection usage and/or thread dumps/sampling profilers, followed by WAS PMI,
 etc.
- - One of the most difficult aspects of performance tuning is understanding whether or not the
+1. One of the most difficult aspects of performance tuning is understanding whether or not the
 architecture of the system, or even the test itself, is valid and/or optimal.
- - Meticulously describe and track the problem, each test and its results.
- - Use basic statistics (minimums, maximums, averages, medians, and standard deviations) instead
+1. Meticulously describe and track the problem, each test and its results.
+1. Use basic statistics (minimums, maximums, averages, medians, and standard deviations) instead
 of spot observations.
- - When benchmarking, use a repeatable test that accurately models production behavior, and
+1. When benchmarking, use a repeatable test that accurately models production behavior, and
 avoid short term benchmarks which may not have time to warm up.
- - Take the time to automate as much as possible: not just the testing itself, but also data gathering
+1. Take the time to automate as much as possible: not just the testing itself, but also data gathering
 Page 454
 and analysis. This will help you iterate and test more hypotheses.
- - Make sure you are using the latest version of every product because there are often performance
+1. Make sure you are using the latest version of every product because there are often performance
 or tooling improvements available.
- - When researching problems, you can either analyze or isolate them. Analyzing means taking
+1. When researching problems, you can either analyze or isolate them. Analyzing means taking
 particular symptoms and generating hypotheses on how to change those symptoms. Isolating
 means eliminating issues singly until you've discovered important facts. In general, we have
 found through experience that analysis is preferable to isolation.
- - Review the full end-to-end architecture. Certain internal or external products, devices, content
+1. Review the full end-to-end architecture. Certain internal or external products, devices, content
 delivery networks, etc. may artificially limit throughput (e.g. Denial of Service protection),
 periodically mark services down (e.g. network load balancers, WAS plugin, etc.), or become
 saturated themselves (e.g. CPU on load balancers, etc.).
