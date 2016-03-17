@@ -5,7 +5,6 @@ tags: 性能测试 Linux
 categories: 性能测试 Linux
 ---
 
-## Linux Tunning Tips ##
 1. **CPU core(s)** should not be consistently saturated. Use tools such as vmstat, top, atop, nmon,
 perf, SystemTap, etc.
 2. Generally, physical memory should never be saturated and the operating system should not page
