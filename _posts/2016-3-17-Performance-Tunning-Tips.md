@@ -5,8 +5,6 @@ tags: 性能测试
 categories: 性能测试
 ---
 
-## Performance Tunning Tips ##
-
  - **Performance tuning** is usually about focusing on a few key variables. We will highlight the most
 common tuning knobs that can often improve the speed of the average application by 200% or
 more relative to the default configuration. The first step, however, should be to use and be
